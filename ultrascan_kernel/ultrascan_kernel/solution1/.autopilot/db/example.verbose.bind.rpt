@@ -1,0 +1,456 @@
+
+
+================================================================
+== Vitis HLS Report for 'example'
+================================================================
+* Date:           Tue Jun 22 09:04:30 2021
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        ultrascan_kernel
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu280-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  1.25 ns|  2.500 ns|     0.34 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        3|        3|  7.500 ns|  7.500 ns|    4|    4|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------+-----------+---------+---------+----------+----------+-----+-----+----------+
+        |                     |           |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+        |       Instance      |   Module  |   min   |   max   |    min   |    max   | min | max |   Type   |
+        +---------------------+-----------+---------+---------+----------+----------+-----+-----+----------+
+        |grp_ultrascan_fu_43  |ultrascan  |        2|        2|  5.000 ns|  5.000 ns|    1|    1|  yes(flp)|
+        +---------------------+-----------+---------+---------+----------+----------+-----+-----+----------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.91>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%input_symbols_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %input_symbols"   --->   Operation 5 'read' 'input_symbols_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%tmp = alloca i64 1" [example.cpp:25]   --->   Operation 6 'alloca' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [3/3] (0.91ns)   --->   "%call_ln27 = call void @ultrascan, i8 %input_symbols_read, i256 %tmp" [example.cpp:27]   --->   Operation 7 'call' 'call_ln27' <Predicate = true> <Delay = 0.91> <CoreInst = "BlackBox">   --->   Core 120 'BlackBox' <Latency = 2> <II = 1> <Delay = 2.50> <IPBlock> <Opcode : 'call' 'blackbox'> <InPorts = 0> <OutPorts = 0> <Async> <CReg>
+
+State 2 <SV = 1> <Delay = 0.91>
+ST_2 : Operation 8 [2/3] (0.91ns)   --->   "%call_ln27 = call void @ultrascan, i8 %input_symbols_read, i256 %tmp" [example.cpp:27]   --->   Operation 8 'call' 'call_ln27' <Predicate = true> <Delay = 0.91> <CoreInst = "BlackBox">   --->   Core 120 'BlackBox' <Latency = 2> <II = 1> <Delay = 2.50> <IPBlock> <Opcode : 'call' 'blackbox'> <InPorts = 0> <OutPorts = 0> <Async> <CReg>
+
+State 3 <SV = 2> <Delay = 0.91>
+ST_3 : Operation 9 [1/3] (0.91ns)   --->   "%call_ln27 = call void @ultrascan, i8 %input_symbols_read, i256 %tmp" [example.cpp:27]   --->   Operation 9 'call' 'call_ln27' <Predicate = true> <Delay = 0.91> <CoreInst = "BlackBox">   --->   Core 120 'BlackBox' <Latency = 2> <II = 1> <Delay = 2.50> <IPBlock> <Opcode : 'call' 'blackbox'> <InPorts = 0> <OutPorts = 0> <Async> <CReg>
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 10 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1"   --->   Operation 10 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 11 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %input_symbols"   --->   Operation 11 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %input_symbols, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 13 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i251 %report_r"   --->   Operation 13 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i251 %report_r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 15 [1/1] (0.00ns)   --->   "%empty = load i256 %tmp" [example.cpp:28]   --->   Operation 15 'load' 'empty' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%trunc_ln28 = trunc i256 %empty" [example.cpp:28]   --->   Operation 16 'trunc' 'trunc_ln28' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 17 [1/1] (0.00ns)   --->   "%write_ln28 = write void @_ssdm_op_Write.ap_auto.i251P0A, i251 %report_r, i251 %trunc_ln28" [example.cpp:28]   --->   Operation 17 'write' 'write_ln28' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 18 [1/1] (0.00ns)   --->   "%ret_ln29 = ret" [example.cpp:29]   --->   Operation 18 'ret' 'ret_ln29' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ input_symbols]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ report_r]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=0; pingpong=0; private_global=0; IO mode=ap_vld:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+input_symbols_read (read         ) [ 00110]
+tmp                (alloca       ) [ 01111]
+call_ln27          (call         ) [ 00000]
+spectopmodule_ln0  (spectopmodule) [ 00000]
+specbitsmap_ln0    (specbitsmap  ) [ 00000]
+specinterface_ln0  (specinterface) [ 00000]
+specbitsmap_ln0    (specbitsmap  ) [ 00000]
+specinterface_ln0  (specinterface) [ 00000]
+empty              (load         ) [ 00000]
+trunc_ln28         (trunc        ) [ 00000]
+write_ln28         (write        ) [ 00000]
+ret_ln29           (ret          ) [ 00000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="input_symbols">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="input_symbols"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="report_r">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="report_r"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1001" name="const_4">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i8"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ultrascan"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Write.ap_auto.i251P0A"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1004" name="tmp_fu_26">
+<pin_list>
+<pin id="27" dir="0" index="0" bw="1" slack="0"/>
+<pin id="28" dir="1" index="1" bw="256" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="tmp/1 "/>
+</bind>
+</comp>
+
+<comp id="30" class="1004" name="input_symbols_read_read_fu_30">
+<pin_list>
+<pin id="31" dir="0" index="0" bw="8" slack="0"/>
+<pin id="32" dir="0" index="1" bw="8" slack="0"/>
+<pin id="33" dir="1" index="2" bw="8" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="input_symbols_read/1 "/>
+</bind>
+</comp>
+
+<comp id="36" class="1004" name="write_ln28_write_fu_36">
+<pin_list>
+<pin id="37" dir="0" index="0" bw="0" slack="0"/>
+<pin id="38" dir="0" index="1" bw="251" slack="0"/>
+<pin id="39" dir="0" index="2" bw="251" slack="0"/>
+<pin id="40" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="write(1151) " fcode="write"/>
+<opset="write_ln28/4 "/>
+</bind>
+</comp>
+
+<comp id="43" class="1004" name="grp_ultrascan_fu_43">
+<pin_list>
+<pin id="44" dir="0" index="0" bw="0" slack="0"/>
+<pin id="45" dir="0" index="1" bw="8" slack="0"/>
+<pin id="46" dir="0" index="2" bw="256" slack="0"/>
+<pin id="47" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln27/1 "/>
+</bind>
+</comp>
+
+<comp id="50" class="1004" name="empty_load_fu_50">
+<pin_list>
+<pin id="51" dir="0" index="0" bw="256" slack="3"/>
+<pin id="52" dir="1" index="1" bw="256" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="empty/4 "/>
+</bind>
+</comp>
+
+<comp id="53" class="1004" name="trunc_ln28_fu_53">
+<pin_list>
+<pin id="54" dir="0" index="0" bw="256" slack="0"/>
+<pin id="55" dir="1" index="1" bw="251" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln28/4 "/>
+</bind>
+</comp>
+
+<comp id="58" class="1005" name="input_symbols_read_reg_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="8" slack="1"/>
+<pin id="60" dir="1" index="1" bw="8" slack="1"/>
+</pin_list>
+<bind>
+<opset="input_symbols_read "/>
+</bind>
+</comp>
+
+<comp id="63" class="1005" name="tmp_reg_63">
+<pin_list>
+<pin id="64" dir="0" index="0" bw="256" slack="0"/>
+<pin id="65" dir="1" index="1" bw="256" slack="0"/>
+</pin_list>
+<bind>
+<opset="tmp "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="29"><net_src comp="6" pin="0"/><net_sink comp="26" pin=0"/></net>
+
+<net id="34"><net_src comp="4" pin="0"/><net_sink comp="30" pin=0"/></net>
+
+<net id="35"><net_src comp="0" pin="0"/><net_sink comp="30" pin=1"/></net>
+
+<net id="41"><net_src comp="24" pin="0"/><net_sink comp="36" pin=0"/></net>
+
+<net id="42"><net_src comp="2" pin="0"/><net_sink comp="36" pin=1"/></net>
+
+<net id="48"><net_src comp="8" pin="0"/><net_sink comp="43" pin=0"/></net>
+
+<net id="49"><net_src comp="30" pin="2"/><net_sink comp="43" pin=1"/></net>
+
+<net id="56"><net_src comp="50" pin="1"/><net_sink comp="53" pin=0"/></net>
+
+<net id="57"><net_src comp="53" pin="1"/><net_sink comp="36" pin=2"/></net>
+
+<net id="61"><net_src comp="30" pin="2"/><net_sink comp="58" pin=0"/></net>
+
+<net id="62"><net_src comp="58" pin="1"/><net_sink comp="43" pin=1"/></net>
+
+<net id="66"><net_src comp="26" pin="1"/><net_sink comp="63" pin=0"/></net>
+
+<net id="67"><net_src comp="63" pin="1"/><net_sink comp="43" pin=2"/></net>
+
+<net id="68"><net_src comp="63" pin="1"/><net_sink comp="50" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: report_r | {4 }
+ - Input state : 
+	Port: example : input_symbols | {1 }
+  - Chain level:
+	State 1
+		call_ln27 : 1
+	State 2
+	State 3
+	State 4
+		trunc_ln28 : 1
+		write_ln28 : 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-------------------------------|---------|---------|---------|---------|---------|
+| Operation|        Functional Unit        |   BRAM  |   DSP   |    FF   |   LUT   |   URAM  |
+|----------|-------------------------------|---------|---------|---------|---------|---------|
+|   call   |      grp_ultrascan_fu_43      |    0    |    1    |    0    |    0    |    0    |
+|----------|-------------------------------|---------|---------|---------|---------|---------|
+|   read   | input_symbols_read_read_fu_30 |    0    |    0    |    0    |    0    |    0    |
+|----------|-------------------------------|---------|---------|---------|---------|---------|
+|   write  |     write_ln28_write_fu_36    |    0    |    0    |    0    |    0    |    0    |
+|----------|-------------------------------|---------|---------|---------|---------|---------|
+|   trunc  |        trunc_ln28_fu_53       |    0    |    0    |    0    |    0    |    0    |
+|----------|-------------------------------|---------|---------|---------|---------|---------|
+|   Total  |                               |    0    |    1    |    0    |    0    |    0    |
+|----------|-------------------------------|---------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-------------------------+--------+
+|                         |   FF   |
++-------------------------+--------+
+|input_symbols_read_reg_58|    8   |
+|        tmp_reg_63       |   256  |
++-------------------------+--------+
+|          Total          |   264  |
++-------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|---------------------|------|------|------|--------||---------||---------|
+|         Comp        |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|---------------------|------|------|------|--------||---------||---------|
+| grp_ultrascan_fu_43 |  p1  |   2  |   8  |   16   ||    9    |
+|---------------------|------|------|------|--------||---------||---------|
+|        Total        |      |      |      |   16   ||  0.387  ||    9    |
+|---------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+--------+
+|           |  BRAM  |   DSP  |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+--------+
+|  Function |    0   |    1   |    -   |    0   |    0   |    0   |
+|   Memory  |    -   |    -   |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    -   |    0   |    -   |    9   |    -   |
+|  Register |    -   |    -   |    -   |   264  |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+--------+
+|   Total   |    0   |    1   |    0   |   264  |    9   |    0   |
++-----------+--------+--------+--------+--------+--------+--------+

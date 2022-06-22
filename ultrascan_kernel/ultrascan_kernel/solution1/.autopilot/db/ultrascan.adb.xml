@@ -1,0 +1,27 @@
+<stg><name>ultrascan</name>
+
+
+<trans_list>
+</trans_list>
+
+
+
+<state_list>
+</state_list>
+
+
+<ports>
+<port id="1" name="input_symbols" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="input_symbols"/></StgValue>
+</port>
+<port id="2" name="report_r" dir="1" iftype="0">
+<core>NULL</core><StgValue><ssdm name="report_r"/></StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

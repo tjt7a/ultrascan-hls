@@ -1,0 +1,208 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source /tools/Xilinx/Vitis_HLS/2021.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2021.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'tjt7a' on host 'panther' (Linux_x86_64 version 5.4.0-120-generic) on Tue Jun 22 09:04:09 EDT 2021
+INFO: [HLS 200-10] On os Ubuntu 18.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/tjt7a/src/ultrascan-hls/ultrascan_kernel'
+WARNING: [HLS 200-40] Environment variable 'C_INCLUDE_PATH' is set to /usr/include/x86_64-linux-gnu.
+WARNING: [HLS 200-40] Environment variable 'CPLUS_INCLUDE_PATH' is set to /usr/include/x86_64-linux-gnu.
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset ultrascan_kernel 
+INFO: [HLS 200-10] Creating and opening project '/home/tjt7a/src/ultrascan-hls/ultrascan_kernel/ultrascan_kernel'.
+INFO: [HLS 200-1510] Running: add_files example.cpp 
+INFO: [HLS 200-10] Adding design file 'example.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb example_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'example_test.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -blackbox ultrascan.json 
+INFO: [HLS 200-10] Adding black box file 'ultrascan.json' to the project
+INFO: [HLS 200-1510] Running: add_files ultrascan.cpp -blackbox 
+INFO: [HLS 200-10] Adding black box file 'ultrascan.cpp' to the project
+INFO: [HLS 200-1510] Running: set_top example 
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/home/tjt7a/src/ultrascan-hls/ultrascan_kernel/ultrascan_kernel/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+WARNING: [HLS 200-40] No /home/tjt7a/src/ultrascan-hls/ultrascan_kernel/ultrascan_kernel/solution1/solution1.aps file found.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2021.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcu280-fsvh2892-2L-e 
+INFO: [HLS 200-1611] Setting target device to 'xcu280-fsvh2892-2L-e'
+INFO: [HLS 200-1510] Running: create_clock -period 800MHz 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 1.25ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../example_test.cpp in debug mode
+   Compiling ../../../../ultrascan.cpp in debug mode
+   Compiling ../../../../example.cpp in debug mode
+   Generating csim.exe
+ report 0
+ report 1
+ report 2
+ report 3
+ report 4
+ report 5
+ report 6
+ report 7
+ report 8
+ report 9
+ report 10
+ report 11
+ report 12
+ report 13
+ report 14
+ report 15
+ report 16
+ report 17
+ report 18
+ report 19
+ report 20
+ report 21
+ report 22
+ report 23
+ report 24
+ report 25
+ report 26
+ report 27
+ report 28
+ report 29
+ report 30
+ report 31
+ report 32
+ report 33
+ report 34
+ report 35
+ report 36
+ report 37
+ report 38
+ report 39
+ report 40
+ report 41
+ report 42
+ report 43
+ report 44
+ report 45
+ report 46
+ report 47
+ report 48
+ report 49
+ report 50
+ report 51
+ report 52
+ report 53
+ report 54
+ report 55
+ report 56
+ report 57
+ report 58
+ report 59
+ report 60
+ report 61
+ report 62
+ report 63
+ report 64
+ report 65
+ report 66
+ report 67
+ report 68
+ report 69
+ report 70
+ report 71
+ report 72
+ report 73
+ report 74
+ report 75
+ report 76
+ report 77
+ report 78
+ report 79
+ report 80
+ report 81
+ report 82
+ report 83
+ report 84
+ report 85
+ report 86
+ report 87
+ report 88
+ report 89
+ report 90
+ report 91
+ report 92
+ report 93
+ report 94
+ report 95
+ report 96
+ report 97
+ report 98
+ report 99
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 4.18 seconds. CPU system time: 0.8 seconds. Elapsed time: 3.8 seconds; current allocated memory: -937.109 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+WARNING: [HLS 200-40] Skipped source file 'ultrascan.json'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 281.934 MB.
+INFO: [HLS 200-10] Analyzing design file 'ultrascan.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'example.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 9.65 seconds. CPU system time: 1.13 seconds. Elapsed time: 10.77 seconds; current allocated memory: 283.914 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-241] Aggregating scalar variable 'report' with compact=bit mode in 251-bits (example.cpp:23:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.63 seconds. CPU system time: 0.4 seconds. Elapsed time: 4.04 seconds; current allocated memory: 284.258 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 284.258 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 287.945 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 292.594 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 318.258 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 320.051 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'example' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ultrascan' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Skip scheduling the IP block.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.07 seconds; current allocated memory: 320.215 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 320.230 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'example' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 320.473 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 320.488 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ultrascan' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ultrascan'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 320.535 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'example' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'example/input_symbols' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'example/report_r' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'example' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'example'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 320.883 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.17 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.24 seconds; current allocated memory: 325.824 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 325.824 MB.
+INFO: [VLOG 209-307] Generating Verilog RTL for example.
+INFO: [HLS 200-789] **** Estimated Fmax: 400.00 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 13.91 seconds. CPU system time: 1.62 seconds. Elapsed time: 15.57 seconds; current allocated memory: 43.891 MB.
+INFO: [HLS 200-112] Total CPU user time: 20.63 seconds. Total CPU system time: 2.98 seconds. Total elapsed time: 21.35 seconds; peak allocated memory: 325.824 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Tue Jun 22 09:04:30 2021...

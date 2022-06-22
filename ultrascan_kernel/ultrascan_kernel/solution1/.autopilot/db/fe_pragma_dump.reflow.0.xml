@@ -1,0 +1,8 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ultrascan" off="1" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int.h" line="66" pragmaType="inline" parentfunction="ap_int<251>::ap_int()" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_common.h" line="517" pragmaType="inline" parentfunction="ssdm_int<251, true>::ssdm_int()" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int.h" line="68" pragmaType="inline" parentfunction="ap_int<251>::ap_int<8>(ap_int<8> const&)" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h" line="221" pragmaType="inline" parentfunction="ap_int_base<251, true>::ap_int_base()" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_int_base.h" line="805" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+</pragmas>

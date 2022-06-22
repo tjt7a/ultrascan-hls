@@ -1,0 +1,142 @@
+
+
+================================================================
+== Vitis HLS Report for 'example'
+================================================================
+* Date:           Tue Jun 22 09:04:30 2021
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        ultrascan_kernel
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu280-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  1.25 ns|  2.500 ns|     0.34 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        3|        3|  7.500 ns|  7.500 ns|    4|    4|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.91>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%input_symbols_read = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %input_symbols"   --->   Operation 5 'read' 'input_symbols_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%tmp = alloca i64 1" [example.cpp:25]   --->   Operation 6 'alloca' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [3/3] (0.91ns)   --->   "%call_ln27 = call void @ultrascan, i8 %input_symbols_read, i256 %tmp" [example.cpp:27]   --->   Operation 7 'call' 'call_ln27' <Predicate = true> <Delay = 0.91> <CoreInst = "BlackBox">   --->   Core 120 'BlackBox' <Latency = 2> <II = 1> <Delay = 2.50> <IPBlock> <Opcode : 'call' 'blackbox'> <InPorts = 0> <OutPorts = 0> <Async> <CReg>
+
+State 2 <SV = 1> <Delay = 0.91>
+ST_2 : Operation 8 [2/3] (0.91ns)   --->   "%call_ln27 = call void @ultrascan, i8 %input_symbols_read, i256 %tmp" [example.cpp:27]   --->   Operation 8 'call' 'call_ln27' <Predicate = true> <Delay = 0.91> <CoreInst = "BlackBox">   --->   Core 120 'BlackBox' <Latency = 2> <II = 1> <Delay = 2.50> <IPBlock> <Opcode : 'call' 'blackbox'> <InPorts = 0> <OutPorts = 0> <Async> <CReg>
+
+State 3 <SV = 2> <Delay = 0.91>
+ST_3 : Operation 9 [1/3] (0.91ns)   --->   "%call_ln27 = call void @ultrascan, i8 %input_symbols_read, i256 %tmp" [example.cpp:27]   --->   Operation 9 'call' 'call_ln27' <Predicate = true> <Delay = 0.91> <CoreInst = "BlackBox">   --->   Core 120 'BlackBox' <Latency = 2> <II = 1> <Delay = 2.50> <IPBlock> <Opcode : 'call' 'blackbox'> <InPorts = 0> <OutPorts = 0> <Async> <CReg>
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 10 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1"   --->   Operation 10 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 11 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %input_symbols"   --->   Operation 11 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %input_symbols, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 13 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i251 %report_r"   --->   Operation 13 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i251 %report_r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 15 [1/1] (0.00ns)   --->   "%empty = load i256 %tmp" [example.cpp:28]   --->   Operation 15 'load' 'empty' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 16 [1/1] (0.00ns)   --->   "%trunc_ln28 = trunc i256 %empty" [example.cpp:28]   --->   Operation 16 'trunc' 'trunc_ln28' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 17 [1/1] (0.00ns)   --->   "%write_ln28 = write void @_ssdm_op_Write.ap_auto.i251P0A, i251 %report_r, i251 %trunc_ln28" [example.cpp:28]   --->   Operation 17 'write' 'write_ln28' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 18 [1/1] (0.00ns)   --->   "%ret_ln29 = ret" [example.cpp:29]   --->   Operation 18 'ret' 'ret_ln29' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 1.25ns, clock uncertainty: 0.338ns.
+
+ <State 1>: 0.913ns
+The critical path consists of the following:
+	wire read operation ('input_symbols_read') on port 'input_symbols' [8]  (0 ns)
+	'call' operation ('call_ln27', example.cpp:27) to 'ultrascan' [10]  (0.913 ns)
+
+ <State 2>: 0.913ns
+The critical path consists of the following:
+	'call' operation ('call_ln27', example.cpp:27) to 'ultrascan' [10]  (0.913 ns)
+
+ <State 3>: 0.913ns
+The critical path consists of the following:
+	'call' operation ('call_ln27', example.cpp:27) to 'ultrascan' [10]  (0.913 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

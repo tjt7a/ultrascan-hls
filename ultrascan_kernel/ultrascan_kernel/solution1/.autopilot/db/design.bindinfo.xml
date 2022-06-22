@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op call" ID="" IMPL="auto" LATENCY="2" OPTYPE="call" PRAGMA="" RTLNAME="grp_ultrascan_fu_43" SOURCE="example.cpp:27" VARIABLE="_ln27" MODULE="example" LOOP="" BUNDLEDNAME="" DSP="1" BRAM="0" URAM="0"/>
+</BindInfo>
